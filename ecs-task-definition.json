@@ -1,0 +1,26 @@
+{
+  "family": "wordpress-task",
+  "networkMode": "awsvpc",
+  "containerDefinitions": [
+    {
+      "name": "wordpress",
+      "image": "542935783289.dkr.ecr.eu-central-1.amazonaws.com/my-wordpress-repo:latest",
+      "memory": 512,
+      "cpu": 256,
+      "portMappings": [
+        {
+          "containerPort": 80,
+          "hostPort": 80
+        }
+      ],
+      "essential": true
+    }
+  ],
+  "executionRoleArn": "arn:aws:iam::542935783289:role/ecsTaskExecutionRole", 
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "cpu": "256",
+  "memory": "512"
+}
+
